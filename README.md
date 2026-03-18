@@ -1,5 +1,15 @@
 # AI Recipe Generator
 
+## Live Demo
+
+**Try it here:** [aileftoverrecipegen.netlify.app](https://aileftoverrecipegen.netlify.app/)
+
+> **Note:** The live demo runs without an active AI backend, so it will display a sample recipe regardless of what ingredients you enter. This lets you explore the full UI, design, and recipe format without needing any credentials.
+>
+> If you'd like to generate real recipes from your own ingredients using Anthropic Claude, clone the project and add your own API key — instructions below.
+
+---
+
 Turn leftover ingredients into a full cookbook-style recipe — powered by Anthropic Claude.
 
 Enter what's in your pantry, pick a meal type and dietary preference, and the app streams a formatted recipe back to you in real time: ingredients, step-by-step instructions, chef's tips, and a nutrition breakdown.
