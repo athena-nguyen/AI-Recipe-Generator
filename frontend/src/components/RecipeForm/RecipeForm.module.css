@@ -1,0 +1,177 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.fieldLabel {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-soft);
+}
+
+.hint {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-muted);
+  letter-spacing: 0.02em;
+}
+
+/* ── Tag input ───────────────────────────────────────────────────── */
+
+.tagInput {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 0.85rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border-input);
+  border-radius: 3px;
+  cursor: text;
+  min-height: 48px;
+  transition: border-color 0.15s;
+}
+
+.tagInput:focus-within {
+  border-color: var(--color-text-soft);
+  outline: none;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.3rem 0.65rem;
+  background: var(--color-text);
+  border: none;
+  border-radius: 3px;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  color: #ffffff;
+  white-space: nowrap;
+  -webkit-font-smoothing: antialiased;
+}
+
+.tagRemove {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font-size: 0.95rem;
+  line-height: 1;
+  color: #e8957a;
+  display: flex;
+  align-items: center;
+  transition: color 0.1s;
+}
+
+.tagRemove:hover {
+  color: #ff6b45;
+}
+
+.tagTextInput {
+  flex: 1;
+  min-width: 160px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-text);
+  padding: 0;
+}
+
+.tagTextInput::placeholder {
+  color: var(--color-muted);
+}
+
+/* ── Dropdowns row ───────────────────────────────────────────────── */
+
+.dropdownRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 640px) {
+  .dropdownRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+.selectWrapper {
+  position: relative;
+}
+
+.select {
+  appearance: none;
+  width: 100%;
+  padding: 0.65rem 2.2rem 0.65rem 0.85rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border-input);
+  border-radius: 3px;
+  font-family: var(--font-mono);
+  font-size: 0.83rem;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+.select:focus {
+  outline: none;
+  border-color: var(--color-text-soft);
+}
+
+.selectArrow {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+/* ── Submit button ───────────────────────────────────────────────── */
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  width: 100%;
+  padding: 1rem;
+  background: var(--color-button);
+  color: #f4f0ea;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.15s, opacity 0.15s;
+  margin-top: 0.25rem;
+}
+
+.button:hover:not(:disabled) {
+  background: var(--color-button-hover);
+}
+
+.button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}

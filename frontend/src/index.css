@@ -1,0 +1,56 @@
+/* ── Design tokens ──────────────────────────────────────────────── */
+:root {
+  --color-bg: #ece7df;
+  --color-surface: #f4f0ea;
+  --color-surface-alt: #e8e2d8;
+  --color-surface-stripe: #f0ece6;
+  --color-border: #d4cdc3;
+  --color-border-input: #bfb8ae;
+  --color-text: #1a1712;
+  --color-text-soft: #4a4540;
+  --color-muted: #8a837a;
+  --color-accent: #b84c2a;
+  --color-accent-dark: #9c3d1f;
+  --color-accent-subtle: rgba(184, 76, 42, 0.08);
+  --color-button: #5e5955;
+  --color-button-hover: #4a4542;
+
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sc: 'Cormorant SC', 'Cormorant Garamond', Georgia, serif;
+  --font-mono: ui-monospace, 'Courier New', Courier, monospace;
+  --font-sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Reset ──────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* ── Error message (used by ErrorMessage component) ─────────────── */
+.error-message {
+  padding: 0.9rem 1.2rem;
+  background: rgba(184, 76, 42, 0.08);
+  border: 1px solid rgba(184, 76, 42, 0.3);
+  border-radius: 4px;
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}

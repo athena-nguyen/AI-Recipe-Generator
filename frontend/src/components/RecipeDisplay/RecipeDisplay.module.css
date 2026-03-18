@@ -1,0 +1,265 @@
+/* ── Card ────────────────────────────────────────────────────────── */
+
+.card {
+  background: #fffffa;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 3rem 3.5rem;
+  animation: fadeIn 0.4s ease;
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Streaming cursor — appended to whatever text is last */
+.streaming .body::after {
+  content: '▌';
+  display: inline-block;
+  animation: blink 0.9s step-start infinite;
+  color: var(--color-accent);
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* ── Fallback banner ─────────────────────────────────────────────── */
+
+.fallbackBanner {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 0.8rem 1rem;
+  background: rgba(184, 76, 42, 0.06);
+  border: 1px solid rgba(184, 76, 42, 0.22);
+  border-radius: 3px;
+  font-family: var(--font-mono);
+  font-size: 0.73rem;
+  line-height: 1.6;
+  color: var(--color-accent);
+  letter-spacing: 0.02em;
+  margin-bottom: 2.25rem;
+}
+
+/* ── Title block ─────────────────────────────────────────────────── */
+
+.titleBlock {
+  margin-bottom: 1.75rem;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+  margin: 0 0 0.75rem;
+}
+
+.meta {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-soft);
+  margin: 0;
+}
+
+.diamond {
+  color: var(--color-accent);
+}
+
+/* ── Recipe body ─────────────────────────────────────────────────── */
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ── Section labels (h2) ─────────────────────────────────────────── */
+
+.sectionLabel {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin: 2.25rem 0 1rem;
+  padding: 0;
+  border: none;
+}
+
+/* ── Description blockquote ──────────────────────────────────────── */
+
+.description {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.2rem;
+  line-height: 1.65;
+  color: var(--color-text-soft);
+  border-left: 3px solid var(--color-accent);
+  margin: 0 0 0.5rem;
+  padding: 0.25rem 0 0.25rem 1.25rem;
+}
+
+.description p {
+  margin: 0;
+}
+
+/* ── Ingredients list (two-column) ───────────────────────────────── */
+
+.ingredientsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2.5rem;
+  row-gap: 0.7rem;
+}
+
+@media (max-width: 540px) {
+  .ingredientsList {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ingredientsList li {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--color-text);
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.ingredientsList li::before {
+  content: '—';
+  color: var(--color-text-soft);
+  flex-shrink: 0;
+}
+
+/* ── Steps list (big numbers) ────────────────────────────────────── */
+
+.stepsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: step-counter;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.stepsList li {
+  counter-increment: step-counter;
+  position: relative;
+  padding-left: 4rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.75;
+  color: var(--color-text);
+}
+
+.stepsList li::before {
+  content: counter(step-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: var(--font-serif);
+  font-size: 2.4rem;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--color-accent);
+}
+
+.stepsList li p {
+  margin: 0;
+  padding-top: 0.3rem;
+}
+
+/* ── Nutrition table ─────────────────────────────────────────────── */
+
+.nutritionTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  margin-top: 0.25rem;
+}
+
+.nutritionTable th,
+.nutritionTable td {
+  padding: 0.45rem 0.75rem;
+  border: 1px solid var(--color-border);
+  text-align: left;
+}
+
+.nutritionTable th {
+  background: #f7f5f2;
+  color: var(--color-muted);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.nutritionTable tr:nth-child(even) td {
+  background: #faf9f7;
+}
+
+/* ── Fallback plain paragraph / strong styling ───────────────────── */
+
+.body p {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.75;
+  color: var(--color-text);
+  margin: 0.4rem 0;
+}
+
+.body strong {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* ── Chef's tips (also a ul — single column override) ────────────── */
+/* Tips section typically has 2–3 items; grid auto handles it nicely  */
+
+/* ── Copy button ─────────────────────────────────────────────────── */
+
+.copyButton {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 2.25rem;
+  padding: 0.55rem 1.25rem;
+  background: transparent;
+  border: 1px solid var(--color-border-input);
+  color: var(--color-text-soft);
+  border-radius: 3px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.copyButton:hover {
+  background: var(--color-surface-alt);
+  border-color: var(--color-text-soft);
+  color: var(--color-text);
+}
